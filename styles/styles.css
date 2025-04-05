@@ -1,2 +1,49 @@
 @import "./open-props.css";
 @import "./normalize.css";
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+:where(:not(dialog)) {
+  margin: 0;
+}
+
+:root {
+  --content-max-width: 1600px;
+  --section-padding-inline: 24px;
+  --nav-height: 80px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-padding-inline: 80px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface-1);
+}
+
+header {
+  height: var(--nav-height);
+}
+
+.section {
+  margin-bottom: 0;
+
+  &.highlight {
+    background-color: var(--surface-3);
+  }
+}
+.section:not(.hero-container) > div {
+  padding-inline: var(--section-padding-inline);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
