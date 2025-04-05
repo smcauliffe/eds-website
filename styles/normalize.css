@@ -112,6 +112,7 @@
 }
 :where(h1) {
     font-size: var(--font-size-8);
+    font-family: var(--font-monospace-slab-serif);
     max-inline-size: var(--size-header-1);
 }
 :where(h2) {

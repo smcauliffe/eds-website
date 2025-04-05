@@ -1,6 +1,12 @@
 /* header and nav layout */
 header .nav-wrapper {
   width: 100%;
+
+  pre {
+    font-size: 10px;
+    color: var(--purple-2);
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 }
 
 header nav {
@@ -12,9 +18,8 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: 1248px;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding-inline: var(--section-padding-inline);
   font-family: var(--body-font-family);
 }
 
@@ -32,8 +37,7 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    padding-inline: var(--section-padding-inline);
   }
 
   header nav[aria-expanded='true'] {
