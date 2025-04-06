@@ -1,23 +1,25 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
   width: 100%;
-  z-index: 2;
-  position: fixed;
+  background-color: var(--gray-1);
+
+  /* doggo */
+  pre {
+    font-size: 8px;
+    -webkit-font-smoothing: antialiased;
+    transform: translateY(-3px); 
+  }
 }
 
 header nav {
-  box-sizing: border-box;
   display: grid;
   grid-template:
     'hamburger brand tools' var(--nav-height)
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
-  gap: 0 24px;
   margin: auto;
-  max-width: 1248px;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding-inline: 40px;
   font-family: var(--body-font-family);
 }
 
@@ -33,10 +35,7 @@ header nav[aria-expanded='true'] {
 @media (width >= 900px) {
   header nav {
     display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    justify-content: flex-start;
   }
 
   header nav[aria-expanded='true'] {
@@ -138,10 +137,10 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  justify-self: right;
 }
 
 header nav .nav-brand img {
@@ -170,7 +169,7 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -190,6 +189,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
+    justify-items: flex-end;
   }
 
   header nav .nav-sections .nav-drop {
@@ -237,24 +237,25 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
     display: block;
     position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
+    right: -20px;
+    width: 250px;
+    top: var(--nav-height);
+    padding: 20px 40px;
+    background-color: var(--gray-1);
     white-space: initial;
+    text-align: right;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     content: '';
     position: absolute;
     top: -8px;
-    left: 16px;
+    right: 16px;
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--gray-1);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
