@@ -32,6 +32,8 @@ body {
 
 header {
   height: var(--nav-height);
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
@@ -43,11 +45,15 @@ h1 {
   }
 }
 
+h2, h3, h4, h5 {
+  color: var(--gray-8);
+}
+
 .section:not(.nav-hamurger, .nav-brand, .nav-sections) > .default-content-wrapper {
   margin-block: var(--section-vertical-spacing) calc(var(--section-vertical-spacing)*.5);
 }
 
-.section:not(.hero-container, .footer-container) > div {
+.section:not(.hero-container, .nav-brand, .nav-sections, .footer-container) > div {
   padding-inline: var(--section-padding-inline);
   max-width: 1200px;
 
