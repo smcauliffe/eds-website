@@ -9,6 +9,16 @@ export default function decorate(block) {
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
+      try {
+        const button = div.querySelector('.button-container');
+        if (button) {
+          const cardFooter = document.createElement('div');
+          cardFooter.append(button);
+          div.parentNode.insertBefore(button, div.nextSibling);
+        }
+      } catch {
+        // nada
+      }
     });
     ul.append(li);
   });

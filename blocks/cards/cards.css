@@ -8,16 +8,30 @@
 }
 
 .cards > ul > li {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #dadada;
   background-color: var(--surface-1);
 }
 
 .cards .cards-card-body {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+}
+
+.cards .cards-card-body,
+.cards .button-container {
   margin: 16px;
+}
+
+.cards .button-container {
+  flex-shrink: 0;
 }
 
 .cards .cards-card-image {
   line-height: 0;
+  flex-shrink: 0;
 }
 
 .cards > ul > li img {
