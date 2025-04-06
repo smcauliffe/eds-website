@@ -16,33 +16,45 @@
   --section-padding-inline: 24px;
   --nav-height: 80px;
   --hero-image-offset: 30%;
+  --section-vertical-spacing: 40px;
 }
 
 @media (min-width: 768px) {
   :root {
     --section-padding-inline: 80px;
-    --hero-image-offset: center;
+    --section-vertical-spacing: 80px;
   }
 }
 
 body {
   margin: 0;
-  background-color: var(--surface-1);
 }
 
 header {
   height: var(--nav-height);
 }
 
-.section {
-  margin-bottom: 0;
+h1 {
+  display: inline-flex;
+  align-items: center;
 
-  &.highlight {
-    background-color: var(--surface-3);
+  sup {
+    padding-inline: 4px;
   }
 }
-.section:not(.hero-container) > div {
+
+.section:not(.nav-hamurger, .nav-brand, .nav-sections) > .default-content-wrapper {
+  margin-block: var(--section-vertical-spacing) calc(var(--section-vertical-spacing)*.5);
+}
+
+.section:not(.hero-container, .footer-container) > div {
   padding-inline: var(--section-padding-inline);
+  max-width: 1200px;
+
+  @media (min-width: 1024px) {
+    padding-inline: calc(var(--section-padding-inline) * 2); 
+    margin: 0 auto;
+  }
 }
 
 img {
