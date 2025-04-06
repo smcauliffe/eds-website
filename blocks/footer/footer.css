@@ -13,6 +13,7 @@ footer .footer > div {
 }
 
 footer .footer p {
+  font-size: var(--font-size-0);
   margin: 0;
 }
 
@@ -21,6 +22,5 @@ footer .footer p {
     .spotify-embed {
       padding-inline: calc(var(--section-padding-inline)* 2);
     }
-    padding: 0;
   }
 }
