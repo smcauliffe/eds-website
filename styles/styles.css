@@ -53,7 +53,7 @@ h2, h3, h4, h5 {
   margin-block: var(--section-vertical-spacing) calc(var(--section-vertical-spacing)*.5);
 }
 
-.section:not(.hero-container, .nav-brand, .nav-sections, .footer-container) > div {
+.section:not(.hero-container, .nav-brand, .nav-sections, :has(.spotify-embed), .footer-container) > div {
   padding-inline: var(--section-padding-inline);
   max-width: 1200px;
 
