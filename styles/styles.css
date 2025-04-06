@@ -39,7 +39,7 @@ h1 {
   align-items: center;
 
   sup {
-    padding-inline: 4px;
+    padding-inline: 2px 4px;
   }
 }
 
