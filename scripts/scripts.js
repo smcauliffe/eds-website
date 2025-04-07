@@ -17,6 +17,8 @@ import {
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
  */
+
+// eslint-disable-next-line no-unused-vars
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
@@ -44,6 +46,8 @@ async function loadFonts() {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
+
+// eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
     // buildHeroBlock(main);

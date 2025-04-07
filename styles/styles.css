@@ -1,9 +1,9 @@
-@import "./open-props.css";
-@import "./normalize.css";
+@import url("./open-props.css");
+@import url("./normalize.css");
 
 *,
-:after,
-:before {
+::after,
+::before {
     box-sizing: border-box;
 }
 
