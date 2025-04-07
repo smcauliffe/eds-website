@@ -25,4 +25,24 @@ export default function decorate(block) {
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.textContent = '';
   block.append(ul);
+
+  const fadeSections = document.querySelectorAll(".cards li");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Optional: remove if you want it to re-trigger
+        }
+      });
+    },
+    {
+      threshold: 0.5
+    }
+  );
+
+  fadeSections.forEach(section => {
+    observer.observe(section);
+  });
 }
