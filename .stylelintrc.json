@@ -1,3 +1,7 @@
 {
-  "extends": ["stylelint-config-standard"]
+  "extends": ["stylelint-config-standard"],
+  "ignoreFiles": ["styles/open-props.css", "styles/normalize.css"],
+  "rules": {
+    "media-feature-range-notation": null
+  }
 }
