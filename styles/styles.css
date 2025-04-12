@@ -1,17 +1,6 @@
-@import url("./open-props.css");
-@import url("./normalize.css");
-
-*,
-::after,
-::before {
-    box-sizing: border-box;
-}
-
-:where(:not(dialog)) {
-  margin: 0;
-}
-
 :root {
+  --base-font-size: 16px;
+  --base-line-height: 1.5;
   --content-max-width: 1600px;
   --section-padding-inline: 24px;
   --nav-height: 80px;
@@ -26,31 +15,68 @@
   }
 }
 
-body {
+/* Minimal CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
 }
 
-header {
-  height: var(--nav-height);
-  position: relative;
-  z-index: 1;
+html, body {
+  height: 100%;
 }
 
-h1 {
-  display: inline-flex;
-  align-items: center;
+body {
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-  sup {
-    padding-inline: 2px 4px;
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
 
-h2, h3, h4, h5 {
-  color: var(--gray-8);
+/* Default content normalize */
+
+.default-content-wrapper {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p, ul, ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
 }
 
-.section:not(.nav-hamurger, .nav-brand, .nav-sections) > .default-content-wrapper {
-  margin-block: var(--section-vertical-spacing) calc(var(--section-vertical-spacing)*.5);
+/* Content layout defaults */
+
+.section {
+  margin-block: 2rem 1rem;
 }
 
 .section:not(.hero-container, .nav-brand, .nav-sections, :has(.spotify-embed), .footer-container) > div {
@@ -61,9 +87,4 @@ h2, h3, h4, h5 {
     padding-inline: calc(var(--section-padding-inline) * 2); 
     margin: 0 auto;
   }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
