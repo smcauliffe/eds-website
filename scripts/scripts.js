@@ -131,3 +131,7 @@ async function loadPage() {
 }
 
 loadPage();
+
+const bummerEl = document.createElement('div');
+bummerEl.textContent = 'Unless this shows this time';
+document.body.append(bummerEl);
